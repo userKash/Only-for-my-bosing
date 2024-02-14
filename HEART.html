@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="preview_image.jpg" />
+    <title>Only for my bossing</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #fadfe5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #heart-container {
+            position: relative;
+        }
+        #letter-container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            display: none;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        #heart {
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        #heart:hover {
+            transform: scale(1.1) translateX(-50%);
+        }
+        #heart-container.clicked #heart {
+            position: absolute;
+            bottom: 20px;
+            opacity: 0;
+        }
+        #heart-container.clicked #letter-container {
+            display: block;
+            animation: heartEffect 1s ease-in-out;
+        }
+        h1 {
+            color: #e83e8c;
+        }
+        p {
+            font-style: italic;
+            line-height: 1.5;
+        }
+        .signature {
+            text-align: right;
+            font-style: italic;
+            color: #777;
+        }
+        @keyframes heartEffect {
+            0% {
+                transform: scale(0.1) translateY(-50px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="heart-container">
+    <div id="letter-container">
+        <h1>Happy Valentine's Day</h1>
+        <p>On this special day, I want to express my love for you.
+        Thank you for being my source of happiness every day. I'm so grateful for every moment we share together. 
+        I know we've been busy lately, yet despite everything going on, you are always on my mind. No matter how busy it gets, I can't help but think of you.
+        Remember that I'm always here for you. I'll keep praying for your success every day.
+        Good luck with your exams and Happy Valentine's Day, my pretty future Doctora! :) </p>
+        <p></p>
+        <div class="signature">
+            <p>With all my heart,</p>
+            <p>Karl</p>
+        </div>
+    </div>
+
+    <img id="heart" src="https://emojicdn.elk.sh/❤️" alt="Heart" width="80" height="80">
+</div>
+
+<script>
+    const heartContainer = document.getElementById('heart-container');
+
+    heartContainer.addEventListener('click', function() {
+        heartContainer.classList.toggle('clicked');
+    });
+</script>
+
+</body>
+</html>
